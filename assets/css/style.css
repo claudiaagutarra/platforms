@@ -1,0 +1,36 @@
+h1 {
+    font-size: 38px;
+    text-align: center;
+    padding: 20px;
+    font-family: 'Orbitron', sans-serif;
+}
+#buttondisplay {
+    width: 700px;
+    margin: 0 auto;
+    text-align: center;
+    margin-bottom: 20px;
+}
+button {
+font-size: 16px;
+color: white;
+background-color: #008CBA;
+padding: 10px;
+border-radius: 12px;
+transition-duration: 0.4s;
+cursor: pointer;
+}
+.button:hover {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #008CBA;
+}
+
+p {
+    padding: 15px
+}
+
+#gifs-appear-here {
+    margin-bottom: 20px;
+    column-count: 5;
+
+}
