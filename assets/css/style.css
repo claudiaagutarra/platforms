@@ -3,6 +3,7 @@ h1 {
     text-align: center;
     padding: 20px;
     font-family: 'Orbitron', sans-serif;
+    /* border-bottom: 2px solid #008CBA; */
 }
 #buttondisplay {
     width: 700px;
@@ -31,7 +32,7 @@ cursor: pointer;
 }
 
 p {
-    padding: 15px
+    padding: 5px;
 }
 
 #gifs-appear-here {
@@ -40,3 +41,5 @@ p {
     column-count: 5;
 
 }
+
+

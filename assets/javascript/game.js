@@ -30,22 +30,13 @@ function displayShowInfo() {
                 tvImage.attr("data-still", results[i].images.fixed_height_still.url);
                 tvImage.attr("data-animate", results[i].images.fixed_height.url);
 
-                tvShowDiv.append(p);
                 tvShowDiv.append(tvImage);
+                tvShowDiv.append(p);
+                
 
                 $("#gifs-appear-here").prepend(tvShowDiv);
 
-                $(".gif").on("click", function () {
-                    var state = $(this).attr("data-state");
-                    if (state === "still") {
-                        $(this).attr("src", $(this).attr("data-animate"));
-                        $(this).attr("data-state", "animate");
-                    }
-                    else if (state === "animate") {
-                        $(this).attr("src", $(this).attr("data-still"));
-                        $(this).attr("data-state", "still");
-                    }
-                });
+             
 
             }
 
@@ -76,5 +67,18 @@ $("#add-show").on("click", function (event) {
 $(document).on("click", ".tvshow-btn", displayShowInfo);
 
 renderButtons();
+
+$(document).on("click", ".gif", function () {
+    var state = $(this).attr("data-state");
+    if (state === "still") {
+        $(this).attr("src", $(this).attr("data-animate"));
+        $(this).attr("data-state", "animate");
+    }
+    else {
+        $(this).attr("src", $(this).attr("data-still"));
+        $(this).attr("data-state", "still");
+    }
+
+});
 
 
