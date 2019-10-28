@@ -6,9 +6,14 @@ h1 {
 }
 #buttondisplay {
     width: 700px;
-    margin: 0 auto;
     text-align: center;
     margin-bottom: 20px;
+    float: left;
+}
+form {
+    float: left;
+    margin-left: 30px;
+
 }
 button {
 font-size: 16px;
@@ -30,6 +35,7 @@ p {
 }
 
 #gifs-appear-here {
+    clear: both;
     margin-bottom: 20px;
     column-count: 5;
 

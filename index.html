@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="assets/css/reset.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.min.css" />
     <link href="https://fonts.googleapis.com/css?family=Orbitron&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -12,7 +13,7 @@
 <body>
     <h1> TV Show GIF Generator </h1>
     <div id="buttondisplay">
-        <button data-tvshow="friends+tv">Friends</button>
+        <!-- <button data-tvshow="friends+tv">Friends</button>
         <button data-tvshow="the+office">The Office</button>
         <button data-tvshow="new+girl">New Girl</button>
         <button data-tvshow="how+i+met+your+mother">How I Met Your Mother</button>
@@ -20,9 +21,14 @@
         <button data-tvshow="breaking-bad">Breaking Bad</button>
         <button data-tvshow="lucifer">Lucifer</button>
         <button data-tvshow="american+horror+story">American Horror Story</button>
-        <button data-tvshow="shameless">Shameless</button>
+        <button data-tvshow="shameless">Shameless</button> -->
     </div>
-
+    <form id="gif-form">
+            <label for="gif-input">Search for a TV Show GIF</label>
+            <input type="text" id="gif-input"><br>
+            <input id="add-show" type="submit" value="GIF Search">
+          </form>
+      
         <div id="gifs-appear-here">
         </div>
         <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>

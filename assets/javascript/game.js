@@ -1,55 +1,80 @@
 
- $("button").on("click", function() {
-     $("#gifs-appear-here").empty()
+var tvshows = ["Friends", "The Office", "Shameless",];
+function displayShowInfo() {
+    $("#gifs-appear-here").empty()
+
     var tvshow = $(this).attr("data-tvshow");
 
     var queryURL = "https://api.giphy.com/v1/gifs/search?q=" +
-      tvshow + "&api_key=6CXrmY4LMfTCMSUFAxc3ngPqjaUUzEYY&limit=10";
+        tvshow + "&api_key=6CXrmY4LMfTCMSUFAxc3ngPqjaUUzEYY&limit=10";
 
     $.ajax({
-      url: queryURL,
-      method: "GET"
+        url: queryURL,
+        method: "GET"
     })
-      .then(function(response) {
-        console.log(queryURL);
+        .then(function (response) {
 
-        console.log(response);
+            var results = response.data;
 
-        var results = response.data;
+            for (var i = 0; i < results.length; i++) {
 
-        for (var i = 0; i < results.length; i++) {
+                var tvShowDiv = $("<div>");
 
-          var tvShowDiv = $("<div>");
+                var p = $("<p>").text("Rating: " + results[i].rating);
 
-          var p = $("<p>").text("Rating: " + results[i].rating);
+                var tvImage = $("<img>");
 
-          var tvImage = $("<img>");
+                tvImage.addClass("gif");
+                tvImage.attr("data-state", "still");
+                tvImage.attr("src", results[i].images.fixed_height_still.url);
+                tvImage.attr("data-still", results[i].images.fixed_height_still.url);
+                tvImage.attr("data-animate", results[i].images.fixed_height.url);
 
-          tvImage.addClass("gif");
-          tvImage.attr("data-state","still");
-          tvImage.attr("src",results[i].images.fixed_height_still.url);
-          tvImage.attr("data-still", results[i].images.fixed_height_still.url);
-          tvImage.attr("data-animate", results[i].images.fixed_height.url);
+                tvShowDiv.append(p);
+                tvShowDiv.append(tvImage);
 
-          tvShowDiv.append(p);
-          tvShowDiv.append(tvImage);
+                $("#gifs-appear-here").prepend(tvShowDiv);
 
-          $("#gifs-appear-here").prepend(tvShowDiv);
+                $(".gif").on("click", function () {
+                    var state = $(this).attr("data-state");
+                    if (state === "still") {
+                        $(this).attr("src", $(this).attr("data-animate"));
+                        $(this).attr("data-state", "animate");
+                    }
+                    else if (state === "animate") {
+                        $(this).attr("src", $(this).attr("data-still"));
+                        $(this).attr("data-state", "still");
+                    }
+                });
 
-          $(".gif").on("click", function() {
-            var state = $(this).attr("data-state");
-            if (state === "still") {
-              $(this).attr("src", $(this).attr("data-animate"));
-              $(this).attr("data-state", "animate");
             }
-            else if (state === "animate") {
-              $(this).attr("src", $(this).attr("data-still"));
-              $(this).attr("data-state", "still");
-            }
-          });
-        }
 
 
+        });
+}
 
-      });
-  });
+function renderButtons() {
+
+    $("#buttondisplay").empty();
+
+    for (var i = 0; i < tvshows.length; i++) {
+        var a = $("<button>");
+        a.addClass("tvshow-btn");
+        a.attr("data-tvshow", tvshows[i]);
+        a.text(tvshows[i]);
+        $("#buttondisplay").append(a);
+    }
+}
+
+$("#add-show").on("click", function (event) {
+    event.preventDefault();
+    var tvshow = $("#gif-input").val().trim();
+    tvshows.push(tvshow);
+    renderButtons();
+});
+
+$(document).on("click", ".tvshow-btn", displayShowInfo);
+
+renderButtons();
+
+
