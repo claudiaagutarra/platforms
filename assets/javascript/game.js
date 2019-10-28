@@ -1,5 +1,5 @@
 
-var tvshows = ["Friends TV", "The Office", "Shameless", "New Girl", "How I Met Your Mother", "Casa De Papel", "Breaking Bad", "Lucifer", "American Horror Story", "Shameless"];
+var tvshows = ["Friends TV", "The Office", "New Girl", "How I Met Your Mother", "Casa De Papel", "Breaking Bad", "Lucifer", "American Horror Story", "Shameless"];
 function displayShowInfo() {
     $("#gifs-appear-here").empty()
 
@@ -19,8 +19,9 @@ function displayShowInfo() {
             for (var i = 0; i < results.length; i++) {
 
                 var tvShowDiv = $("<div>");
-
-                var p = $("<p>").text("Rating: " + results[i].rating);
+                var rating = results[i].rating
+                rating = rating.toUpperCase()
+                var p = $("<p>").text("Rating: " + rating);
 
                 var tvImage = $("<img>");
 
