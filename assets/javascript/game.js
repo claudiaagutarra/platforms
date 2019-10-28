@@ -1,5 +1,5 @@
 
-var tvshows = ["Friends TV", "The Office", "Shameless", "New Girl", "How I Met Your Mother", "Big Mouth", "Breaking Bad", "Lucifer", "American Horror Story", "Shameless"];
+var tvshows = ["Friends TV", "The Office", "Shameless", "New Girl", "How I Met Your Mother", "Casa De Papel", "Breaking Bad", "Lucifer", "American Horror Story", "Shameless"];
 function displayShowInfo() {
     $("#gifs-appear-here").empty()
 

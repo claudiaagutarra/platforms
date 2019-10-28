@@ -6,15 +6,16 @@ h1 {
     /* border-bottom: 2px solid #008CBA; */
 }
 #buttondisplay {
-    width: 700px;
+    width: 50%;
     text-align: center;
+    margin: auto;
     margin-bottom: 20px;
     float: left;
 }
 form {
     float: left;
     margin-left: 30px;
-
+    margin-bottom: 10px;
 }
 button {
 font-size: 16px;
