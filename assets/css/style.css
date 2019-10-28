@@ -19,6 +19,12 @@ form {
     margin-left: 30px;
     margin-bottom: 10px;
 }
+#gif-input{
+    width: 350px;
+}
+#add-show{
+    margin-left: 10px;
+}
 button {
 font-size: 16px;
 color: white;
@@ -50,11 +56,23 @@ p {
     height: 200px;
     width: 99%;
 }
+@media (max-width: 1150px) {
+    #buttondisplay {
+        width: 95%;
+        margin: auto;
+    }
+    #form-inline{
+        margin-top: 8px;
+    }
+    #gifs-appear-here {
+        column-count: 3;
+    }
 
+}
 @media (max-width: 640px) {
     h1 {
-        padding: 0px;
-        margin-top: 20px;
+        padding: 8px;
+        margin-top: 15px;
     }
     #add-show {
         font-size:15px;
@@ -63,8 +81,16 @@ p {
         width: 98%;
         margin: auto;
         clear: both;
-        margin-bottom: 17px;
     }
+    #form-inline{
+        margin-top: 10px;
+    }
+    
+    #gif-input{
+        width: 250px;
+        margin-bottom: 7px;
+    }
+
     button {
         font-size: 12px;
     }
